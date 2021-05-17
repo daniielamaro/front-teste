@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  urlbase: string = "http://danielamaro.k8s.com:31742";
+  urlbase: string = "http://danielamaro.k8s.com:31742/api/request";
 
   constructor(private http: HttpClient) {}
 
