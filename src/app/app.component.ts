@@ -8,16 +8,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  urlbase: string = location.origin + "/api";
+  urlbase: string = "http://danielamaro.k8s.com:31742";
 
   constructor(private http: HttpClient) {}
 
   sendGet(){
     this.http.get(this.urlbase+"/Teste/TesteGet", {
       headers: new HttpHeaders()
-         .set('Content-Type', 'application/json'),
+         .set('Content-Type', 'application/json')
     })
       .subscribe((resp: any) => {
+        console.log(resp);
         alert(resp.resposta);
       })
   }
@@ -25,9 +26,10 @@ export class AppComponent {
   sendPost(){
     this.http.post(this.urlbase+"/Teste/TestePost", null, {
       headers: new HttpHeaders()
-         .set('Content-Type', 'application/json'),
+        .set('Content-Type', 'application/json')
     })
       .subscribe((resp: any) => {
+        console.log(resp);
         alert(resp.resposta);
       })
   }
